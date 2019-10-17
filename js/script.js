@@ -23,19 +23,27 @@ AFRAME.registerComponent('my-event', {
 
 
         marker.addEventListener('markerFound', function() {
-            box.setAttribute('color', "orange");  // Change the object color
+            //box.setAttribute('color', "orange");  // Change the object color
             //menu.setAttribute('visible', true);
             //menuText.setAttribute('visible', true);
+
+            menu.setAttribute('color', 'black');
+            let description = document.createElement('a-plane');
+            description.setAttribute('color', 'darkred');
+            description.setAttribute('scale', {x: 1, y: 1, z: 1});
+            description.setAttribute('rotation', {x: 45, y: 0, z: 0});
+            description.setAttribute('text', 'value: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend ultricies leo et mollis. Integer et metus sit amet nisi tincidunt sodales eu non nisl. Nullam vitae felis vehicula, rhoncus erat et, viverra nisi. Praesent convallis nunc in eleifend vulputate. In eget efficitur elit. In malesuada mi vitae dolor viverra ultricies non non elit. Curabitur justo quam, sagittis dapibus finibus eget, tincidunt sit amet ipsum. Morbi et augue gravida, consequat libero non, sodales nisl. Quisque luctus sem eu quam tempor maximus. Phasellus sed arcu a sapien sagittis vehicula quis vitae sem. Duis ac quam nec mi lobortis imperdiet eu eget nibh. Fusce ac cursus mauris.');
+            sceneEl.appendChild(description);
         });
 
         marker.addEventListener('markerLost', function() {
             menu.setAttribute('color', 'black');
-            box.setAttribute('visible', false);
+            //sceneEl.removeElement('box')
 
             let description = document.createElement('a-plane');
             description.setAttribute('color', 'darkred');
-            description.setAttribute('position', {x: 0.5, y: 0, z: 0});
-            description.setAttribute('scale', '1 2 1');
+            //description.setAttribute('position', {x: 0.5, y: 0, z: 0});
+            //description.setAttribute('scale', '1 2 1');
             description.setAttribute('text', 'value: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend ultricies leo et mollis. Integer et metus sit amet nisi tincidunt sodales eu non nisl. Nullam vitae felis vehicula, rhoncus erat et, viverra nisi. Praesent convallis nunc in eleifend vulputate. In eget efficitur elit. In malesuada mi vitae dolor viverra ultricies non non elit. Curabitur justo quam, sagittis dapibus finibus eget, tincidunt sit amet ipsum. Morbi et augue gravida, consequat libero non, sodales nisl. Quisque luctus sem eu quam tempor maximus. Phasellus sed arcu a sapien sagittis vehicula quis vitae sem. Duis ac quam nec mi lobortis imperdiet eu eget nibh. Fusce ac cursus mauris.');
             sceneEl.appendChild(description);
         });
