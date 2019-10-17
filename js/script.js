@@ -15,22 +15,22 @@ AFRAME.registerComponent('my-event', {
         let menuText = sceneEl.querySelector('#text');
         let button   = sceneEl.querySelector('#button-menu');
 
-        box.setAttribute('color', 'red');
+        //box.setAttribute('color', 'red');
 
         // Hide objects
-        menu.setAttribute('visible', false);
-        menuText.setAttribute('visible', false);
+        //menu.setAttribute('visible', false);
+        //menuText.setAttribute('visible', false);
 
 
         marker.addEventListener('markerFound', function() {
             box.setAttribute('color', "orange");  // Change the object color
-            menu.setAttribute('visible', true);
-            menuText.setAttribute('visible', true);
+            //menu.setAttribute('visible', true);
+            //menuText.setAttribute('visible', true);
         });
 
         marker.addEventListener('markerLost', function() {
             menu.setAttribute('color', 'black');
-            box.setAttribute('color', 'blue');
+            box.setAttribute('visible', false);
 
             let description = document.createElement('a-plane');
             description.setAttribute('color', 'darkred');
@@ -40,8 +40,8 @@ AFRAME.registerComponent('my-event', {
             sceneEl.appendChild(description);
         });
 
-        button.addEventListener('click', function() {
+        //button.addEventListener('click', function() {
             //box.setAttribute('color', 'orange');
-        });
+        //});
     }
 });
